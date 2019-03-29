@@ -71,4 +71,6 @@ const mapDispatchToProps = dispatch => ({
   addColumn: bindActionCreators(ADD_COLUMN, dispatch)
 });
 
+let a = {};
+
 export default connect(mapStateToProps, mapDispatchToProps)(MyDesk);
