@@ -51,17 +51,12 @@ class ColumnSubscribed extends Component {
 		let cards = this.props.navigation.getParam('cards', []);
 		let answeredCards = this.props.navigation.getParam('answeredCards', [])
 		const columnId = this.props.navigation.getParam('columnId', 0);
-		const { addCard } = this.props;
 		
 		return(
 			<View style={styles.container}>
 				<ScrollView 
-					contentContainerStyle={
-						{ 
-							alignItems: 'center', 
-							minWidth: '100%', 
-						}
-					}>
+					contentContainerStyle={styles.scrollViewCont
+				}>
 					<FlatList
 						data={cards}
 						extraData={this.props.cards}

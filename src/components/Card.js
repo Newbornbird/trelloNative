@@ -77,7 +77,8 @@ class Card extends Component {
 						style={styles.cardDescriptionCont}>
 						<Text style={ 
 							cardData ? 
-								(cardData.prayerIsAnswered ? styles.cardDescriptionWithDecoration : styles.cardDescription) : styles.cardDescription  }>
+								(cardData.prayerIsAnswered ? styles.cardDescriptionWithDecoration : styles.cardDescription) : styles.cardDescription  }
+						>
 							{ cardData ? 
 									cardData.cardDescription.length > 17 ? 
 										(cardData.cardDescription.substring(0, 17) + '...') : 

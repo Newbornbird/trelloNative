@@ -15,13 +15,15 @@ const RootStack = createStackNavigator(
 		Column: {
 			screen: Column,
 			navigationOptions: () => ({
-				headerBackTitle: null
-			})
+				headerBackTitle: null,
+				
+			}),
 		},
 		CardInfo
 	},
 	{
-		initialRouteName: 'MyDesk'
+		initialRouteName: 'MyDesk',
+		headerLayoutPreset: 'center'
 	}
 );
 

@@ -11,9 +11,9 @@ import addImage from '../../../images/add.png';
 import Card from '../Card';
 import settings from '../../../images/settings.png';
 
-export const isTablet = !!Platform.isPad;
-export const viewportWidth = Dimensions.get('window').width;
-export const viewportHeight = Dimensions.get('window').height;
+// export const isTablet = !!Platform.isPad;
+// export const viewportWidth = Dimensions.get('window').width;
+// export const viewportHeight = Dimensions.get('window').height;
 
 class ColumnMyPrayers extends Component {
 	constructor(props){
