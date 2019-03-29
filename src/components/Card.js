@@ -206,3 +206,5 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(mapStateToProps, mapDispatchToProps)(Card);
 
 let a = {};
+
+let b = {'cc': 1, 'tt': 3};
