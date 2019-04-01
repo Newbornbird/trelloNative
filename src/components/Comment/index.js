@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import moment from 'moment';
 import { View, Text, StyleSheet, 
-  Image, Platform}  from 'react-native';
+  Image}  from 'react-native';
 import commentUser1 from '../../../images/commentUser1.png';
 
 class Comment extends Component {
