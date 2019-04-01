@@ -40,6 +40,11 @@ let cards = handleActions(
       let copyOfState = { ...state };
       copyOfState[action.payload.cardId].comments.push({id: action.payload.commentId});
       return copyOfState;
+    },
+    CHANGE_CARD_DESCRIPTION: (state, action) => {
+      let copyOfState = { ...state };
+      copyOfState[action.payload.cardId].cardDescription = action.payload.cardDescription;
+      return copyOfState;
     }
   },
   {

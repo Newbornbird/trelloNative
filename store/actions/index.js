@@ -136,3 +136,15 @@ export function ADD_COMMENT(commentDescription, cardId) {
     })
   }
 }
+
+export function CHANGE_CARD_DESCRIPTION(cardId, cardDescription) {
+  return dispatch => {
+    dispatch({
+      type: 'CHANGE_CARD_DESCRIPTION',
+      payload: {
+        cardId,
+        cardDescription
+      }
+    })
+  }
+}

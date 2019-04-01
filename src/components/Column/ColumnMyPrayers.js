@@ -70,7 +70,7 @@ class ColumnMyPrayers extends Component {
 						<Image source={addImage}/>
 					</TouchableOpacity>
 						<TextInput 
-							maxLength={55}
+							maxLength={65}
 							style={styles.inputForAddingPrayer}
 							placeholder='Add a prayer...'
 							placeholderColor='#9C9C9C'

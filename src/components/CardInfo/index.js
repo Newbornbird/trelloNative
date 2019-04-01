@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { View, Text, StyleSheet, 
   TouchableOpacity, Image, 
-  ScrollView, Platform, FlatList}  from 'react-native';
+  ScrollView, Platform, FlatList, TextInput}  from 'react-native';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import uuid from 'uuid';
@@ -14,7 +14,8 @@ import user1 from '../../../images/user1.png';
 import user2 from '../../../images/user2.png';
 import Comment from '../Comment';
 import AddComment from '../AddComment';
-import { TO_PRAY, ADD_COMMENT } from '../../../store/actions';
+import { TO_PRAY, ADD_COMMENT, 
+  CHANGE_CARD_DESCRIPTION } from '../../../store/actions';
 
 class CardInfo extends Component {
   static navigationOptions = ({navigation}) => ({
@@ -40,14 +41,21 @@ class CardInfo extends Component {
 
   render() {
     let cardId = this.props.navigation.getParam('cardId', {});
-    let { comments, addComment, cards } = this.props;
+    let { comments, addComment, changeCardDescription, cards } = this.props;
     return (
         <View style={styles.mainContainer}>
 
           <View style={styles.prayerTitleContainer}>
-            <Text style={styles.prayerTitleText}>
+            {/* <Text style={styles.prayerTitleText}>
               {cards[cardId].cardDescription}
-            </Text>
+            </Text> */}
+            <TextInput 
+              value={cards[cardId].cardDescription}
+              onChangeText={(text) => changeCardDescription(cardId, text)}
+              style={styles.prayerTitleTextInput}
+              multiline={true}
+              maxLength = {65}
+              />
           </View>
           <ScrollView contentContainerStyle={styles.scrollViewCont}>
             <View style={styles.lastPrayingCont}>
@@ -162,6 +170,12 @@ const styles = StyleSheet.create({
     marginBottom: 23,
 
   },
+  prayerTitleTextInput: {
+    color: '#fff',
+    marginLeft: 15,
+    fontSize: 17,
+    marginBottom: Platform.OS === 'ios' ? 15 : 0
+  },
   lastPrayingCont: {
     flexDirection: 'row',
     borderBottomWidth: 1,
@@ -259,6 +273,7 @@ let mapDispatchToProps = (dispatch) => {
   return {
     toPray: bindActionCreators(TO_PRAY, dispatch),
     addComment: bindActionCreators(ADD_COMMENT, dispatch),
+    changeCardDescription: bindActionCreators(CHANGE_CARD_DESCRIPTION, dispatch)
   }
 }
 
